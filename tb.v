@@ -23,7 +23,7 @@ memory m(
 // Clock generator
 always #1 clk = (clk===1'b0);
 
-// Inicia a simulação e executa até 2000 unidades de tempo após o reset
+// Inicia a simulação e executa até 4000 unidades de tempo após o reset
 initial begin
   $dumpfile("saida.vcd");
   $dumpvars(0, tb);
@@ -39,7 +39,9 @@ always @(posedge clk) begin
     $display("Address reached 4092 (0xFFC). Stopping simulation.");
     $finish;
   end
-  else if (address[11] == 1)
+  // Verifica se o endereço tem o bit 11 como 1 e 
+  // imprime os logs de acesso à essas posições de memória
+  else if (address[11] == 1) 
     if (we == 1)
       $display("M[0x%h] <- 0x%h", address, data_out);
     else
