@@ -21,7 +21,7 @@ Seu código deve ser sintetizávelvel, isso significa que deve ser possível ger
 ## Algumas informações extras
 
 * Você pode criar novos arquivos, o script de execução está configurado para compilar todos os arquivos .v presentes no diretório.
-* Vocë pode criar novos testes, utilize a nomenclatura dos arquivos da pasta *test*: Crie um arquivo testeNN.mem que contém o mapa de memória com as instruções a executar e os dados necessários; Crie um arquivo chamado saidaNN.ok que contém a saída experada do teste. O script run-all.sh irá executar cada um dos testes e também comparar com o arquivo de saída esperada.
+* Vocë deve criar novos testes, utilize a nomenclatura dos arquivos da pasta *test*: Não utilize a numeração de 00 até 09, comece seus testes de 10 em diante. Crie um arquivo testeNN.mem que contém o mapa de memória com as instruções a executar e os dados necessários; Crie um arquivo chamado saidaNN.ok que contém a saída experada do teste. O script run-all.sh irá executar cada um dos testes e também comparar com o arquivo de saída esperada.
 * Seu código está sendo simulado com o iverilog. É importante que seu código seja sintetizável.
 * Leia o arquivo de testbench (tb.v) para entender o funcionamento do teste, veja os comentários do arquivo. Em especial, merecem destaque: 1) Toda simulação começa com um reset; 2) A simulação pode parar se forem alcançadas 4000 unidades de tempo (2000 ciclos de clock) ou se a instrução *ebreak* for executada ou se for feito algum acesso à posição de memória 4092, que é a última palavra existente na memória declarada. Qualquer um desses métodos é suficiente para encerrar a simulação.
 * O testbench também monitora todos os acessos à memória que tiverem o bit 11 do endereço com valor 1. Esses acessos são impressos na tela.
@@ -31,3 +31,6 @@ Seu código deve ser sintetizávelvel, isso significa que deve ser possível ger
 Você deve entregar o seu projeto através do Github Classroom, bastando fazer um *commit* e *push* do seu código. os testes serão executados automaticamente. A data limite para entrega é o último dia do mês.
 
 Seu código será avaliado com mais testes do que os que estão dispnoíveis aqui.
+
+O projeto é individual para alunos de pós-graduação e pode ser feito em duplas por alunos de graduação.
+
