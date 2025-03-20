@@ -26,7 +26,7 @@ always #1 clk = (clk===1'b0);
 // Inicia a simulação e executa até 4000 unidades de tempo após o reset
 initial begin
   $dumpfile("saida.vcd");
-  $dumpvars(0, tb);
+  $dumpvars;
   resetn = 1'b0;
   #11 resetn = 1'b1;
   $display("*** Starting simulation. ***");
