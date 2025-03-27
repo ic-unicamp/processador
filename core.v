@@ -9,9 +9,9 @@ module core( // modulo de um core
 
 always @(posedge clk) begin
   if (resetn == 1'b0) begin
-    address <= 32'h00000000;
+    address = 32'h00000000;
   end else begin
-    address <= address + 4;
+    address = address + 4;
   end
   we = 0;
   data_out = 32'h00000000;
